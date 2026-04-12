@@ -22,7 +22,7 @@ def _(mo):
 @app.cell
 def _():
     def sumi(arr):
-        if arr == []: # юазовый случай, если в массиве 0 элементов
+        if arr == []: # базовый случай, если в массиве 0 элементов
             return 0
         return arr[0] + sumi(arr[1:]) # рекурссия 
     
@@ -35,6 +35,17 @@ def _(mo):
     mo.md(r"""
     ##Задание 4.2 рекурсивная функция для подсчета элементов в списке
     """)
+    return
+
+
+@app.cell
+def _():
+    def rec_counter(arr):
+        if arr == []: # базовый случай, если в массиве 0 элементов
+            return 0
+        return 1 + rec_counter(arr[1:]) # рекурссия 
+
+    print(rec_counter(arr=[1, 2, 3, 4, 5]))
     return
 
 
