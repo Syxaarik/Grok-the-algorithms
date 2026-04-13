@@ -14,6 +14,26 @@ def _():
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
+    ##Стеквызовов с рекурсией
+    """)
+    return
+
+
+@app.cell
+def _():
+    def fact(x):
+        if x == 1:
+            return 1
+        else: 
+            return x * fact(x-1)
+
+    print(fact(x=5))
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
     ##Задание 4.1 Рекурсивная функция sum()
     """)
     return
@@ -25,7 +45,7 @@ def _():
         if arr == []: # базовый случай, если в массиве 0 элементов
             return 0
         return arr[0] + sumi(arr[1:]) # рекурссия 
-    
+
     print(sumi(arr=[1, 2, 3, 4, 5]))
     return
 
